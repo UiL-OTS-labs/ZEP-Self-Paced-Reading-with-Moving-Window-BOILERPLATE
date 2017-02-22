@@ -42,6 +42,8 @@ Page test_page
     on_event:message()
     {
         // Process button-box message. See setup() below.
+        if (message_arg != CONTINUE)
+            return;
         response.process_hit(event_time);
     }
 
@@ -296,7 +298,16 @@ Page test_page
         // Enable button-box buttons.
         control.target = this;
         control.button_box.disable_buttons();
-        control.button_box.enable_all_buttons(CONTINUE);
+
+        // Button box is intended as follows:
+        /********************\
+        |  1              2  |
+        |                    |
+        |         0          |
+        \********************/
+        control.button_box.enable_button(1, CONTINUE);
+        control.button_box.enable_button(0, 1);
+        control.button_box.enable_button(2, 2);
     }
 
 

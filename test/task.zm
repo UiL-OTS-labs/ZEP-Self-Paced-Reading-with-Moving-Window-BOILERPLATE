@@ -109,6 +109,7 @@ Block task
             on_event:entry()
             {
                 item = prac_items[practice.cycle];
+                control.target = test_page;
             }
 
 
@@ -136,10 +137,13 @@ Block task
             {
                 on_event:entry()
                 {
+                    control.target = choose_1of2_page;
                     choose_1of2_page.set_text(item.question);
                     choose_1of2_page.set_label_texts(" Yes ", " No ");
                     choose_1of2_page.set_keys(KEY_Shift_L, KEY_Shift_R);
                     choose_1of2_page.action(this, item.qanswer ? 1 : 2);
+                    // inform the control that choose_1of2_page must
+                    // get an event.
                 }
             }
         }
@@ -215,6 +219,9 @@ Block task
                 output.type = item.type;
                 output.question = substring(item.question, 0, 30);
                 output.qcorrect = -1;
+
+                // Make sure the button events are handled on the test page.
+                control.target = test_page;
             }
 
 
@@ -265,6 +272,7 @@ Block task
             {
                 on_event:entry()
                 {
+                    control.target = choose_1of2_page;
                     choose_1of2_page.set_text(item.question);
                     choose_1of2_page.set_label_texts(" Yes ", " No ");
                     choose_1of2_page.set_keys(KEY_Shift_L, KEY_Shift_R);

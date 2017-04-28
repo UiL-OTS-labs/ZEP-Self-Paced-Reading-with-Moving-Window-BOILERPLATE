@@ -7,7 +7,7 @@ DESCRIPTION:
 
 Implementation of task: Self-Paced Reading with Moving Window
 
-For more information on the read_mw task see readme.txt in the 
+For more information on the read_mw task see readme.txt in the
 test folder.
 
 
@@ -41,7 +41,7 @@ Experiment experiment
 {
     on_event:entry()
     {
-        control.button_box.open("/dev/ttyACM0");
+        control.button_box.open();
         control.button_box.enable_all_buttons(CONTINUE);
         show_test_windows();
     }

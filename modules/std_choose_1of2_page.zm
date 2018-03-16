@@ -23,6 +23,8 @@ Page choose_1of2_page
     char        key2;           // key for response 2
     char        altkey1;        // alternate key for response 1
     char        altkey2;        // alternate key for response 2
+    int         answer1;        // The answer value for button 1
+    int         answer2;        // The answer value for button 2
 
 
     init()
@@ -130,6 +132,7 @@ Page choose_1of2_page
     {
         int     goodvalue;      // correct answer to question (0 if n.a.)
         int     value;          // response value: 1..2 (0 on timeout)
+        int     answer;
         int     rt;             // response time [ms]
         bool    correct;        // true if correct answer given (if applicable)
 
@@ -138,6 +141,7 @@ Page choose_1of2_page
         {
             goodvalue = 0;
             value = 0;
+            answer = -1;
             rt = -9999;
             correct = false;
         }
@@ -148,8 +152,16 @@ Page choose_1of2_page
             if (hit(t) == HIT_VALID)
             {
                 value = val;
+
+                if (val == 1)
+                    answer = answer1;
+                else if (val == 2)
+                    answer = answer2;
+                else
+                    answer = -1;
+
                 rt = int(reaction_time(0));
-                correct = val == goodvalue;
+                correct = answer == goodvalue;
 
                 ignore_remaining_hits();
 
@@ -211,6 +223,12 @@ Page choose_1of2_page
     {
         altkey1 = k1;
         altkey2 = k2;
+    }
+
+    void set_answer_values(int k1, int k2)
+    {
+        answer1 = k1;
+        answer2 = k2;
     }
 
 

@@ -23,6 +23,8 @@ record TestOutput
     ItemType    type;           // item type
     string      question;       // true/false statement about stimulus (partial)
 
+    int         ppanswer;       // the answer the participant gave
+
     int         qcorrect;       // correct answer to quest: 0=no, 1=yes, -1=n.a.
     int         rt1;            // reading time for starred segment 1 [ms]
     int         rt2;            // reading time for starred segment 2 [ms]

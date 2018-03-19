@@ -140,8 +140,12 @@ Block task
                     control.target = choose_1of2_page;
                     choose_1of2_page.set_text(item.question);
                     choose_1of2_page.set_label_texts(" Yes ", " No ");
+                    choose_1of2_page.set_answer_values(1, 0);
+                    // Or choose the other way around with false and true
+//                    choose_1of2_page.set_label_texts("False", "True");
+//                    choose_1of2_page.set_answer_values(0, 1);
                     choose_1of2_page.set_keys(KEY_Shift_L, KEY_Shift_R);
-                    choose_1of2_page.action(this, item.qanswer ? 1 : 2);
+                    choose_1of2_page.action(this, item.qanswer);
                     // inform the control that choose_1of2_page must
                     // get an event.
                 }
@@ -275,14 +279,19 @@ Block task
                     control.target = choose_1of2_page;
                     choose_1of2_page.set_text(item.question);
                     choose_1of2_page.set_label_texts(" Yes ", " No ");
+                    choose_1of2_page.set_answer_values(1, 0);
+                    // Or choose the other way around with false and true
+//                    choose_1of2_page.set_label_texts("False", "True");
+//                    choose_1of2_page.set_answer_values(0, 1);
                     choose_1of2_page.set_keys(KEY_Shift_L, KEY_Shift_R);
-                    choose_1of2_page.action(this, item.qanswer ? 1 : 2);
+                    choose_1of2_page.action(this, item.qanswer);
                 }
 
 
                 on_event:exit()
                 {
                     output.qcorrect = choose_1of2_page.response.correct;
+                    output.answer   = choose_1of2_page.response.answer;
                 }
             }
         }

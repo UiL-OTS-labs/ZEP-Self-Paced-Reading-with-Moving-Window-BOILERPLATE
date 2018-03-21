@@ -119,6 +119,9 @@ Page test_page
         bool    measure;        // set when presenting a starred segment
         int     measnum;        // current measurement number
 
+        dur     bounce_dur = 100ms; // if rt < bounce_dur it is bouncing...
+                                
+
         // Response data.
         int[..] rt;             // response times [ms]
 
@@ -156,11 +159,17 @@ Page test_page
             // response interval and start next stimulus/response interval.
             if (validity == HIT_VALID)
             {
+                bool bounce = false;
+                if (reaction_time(num_valid_hits - 1) < bounce_dur)
+                    bounce = true;
+                if (bounce)
+                    return;
+
                 if (measure)
                 {
                     if (measnum <= MAX_STARRED_SEGMENTS)
                     {
-                        rt[measnum] = int(reaction_time(0));
+                        rt[measnum] = int(reaction_time(num_valid_hits - 1));
                         measnum++;
                     }
                     else

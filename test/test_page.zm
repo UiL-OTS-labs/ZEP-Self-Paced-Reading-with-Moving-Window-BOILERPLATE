@@ -119,11 +119,14 @@ Page test_page
         bool    measure;        // set when presenting a starred segment
         int     measnum;        // current measurement number
 
-        dur     bounce_dur = 100ms; // if rt < bounce_dur it is bouncing...
-                                
-
         // Response data.
         int[..] rt;             // response times [ms]
+
+        on_event:init()
+        {
+            // Only accept responses with at least 100 ms after the previous.
+            min_hit_interval = 100ms;
+        }
 
 
         void clear()
@@ -159,12 +162,6 @@ Page test_page
             // response interval and start next stimulus/response interval.
             if (validity == HIT_VALID)
             {
-                bool bounce = false;
-                if (reaction_time(num_valid_hits - 1) < bounce_dur)
-                    bounce = true;
-                if (bounce)
-                    return;
-
                 if (measure)
                 {
                     if (measnum <= MAX_STARRED_SEGMENTS)
@@ -204,9 +201,13 @@ Page test_page
                     start(stimonset);
                 }
             }
+            else if (validity == HIT_IGNORED) {
+                print_error("Response validity = " + validity + "\n");
+            }
             else if (validity == HIT_TOO_EARLY || validity == HIT_TOO_LATE)
             {
                 // False alarm. Deal with this if desired.
+                //print_error("Response validity = " + validity + "\n");
             }
         }
 

@@ -7,8 +7,7 @@ Description:
         Participant's task is to read sentences which are presented in a 
         segment-by-segment fashion. Participant reveals next segment by hitting
         a button. RT is measured from the presentation of a segment to button-
-        press. For each sentence there is a 50% chance of a comprehension 
-        question to be asked. Self-paced. Output: RT per segment.
+        press. Comprehension questions are implemented. Self-paced. Output: RT per segment.
 
         This particular SPR implementation uses a moving window: For each 
         segment the text in the segment is displayed at its normal position 

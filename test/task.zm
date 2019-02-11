@@ -28,6 +28,7 @@ Global structure of this experiment phase:
 
 HISTORY:
 2012-03-19 TV   Created.
+2019-02-10 IM Adapted to record 15 segments rather than 10.
 
 \******************************************************************************/
 
@@ -256,6 +257,11 @@ Block task
                     output.rt8 = test_page.response.rt[8];
                     output.rt9 = test_page.response.rt[9];
                     output.rt10 = test_page.response.rt[10];
+                    output.rt11 = test_page.response.rt[11];
+                    output.rt12 = test_page.response.rt[12];
+                    output.rt13 = test_page.response.rt[13];
+                    output.rt14 = test_page.response.rt[14];
+                    output.rt15 = test_page.response.rt[15];
                 }
             }
 

@@ -62,7 +62,7 @@ Page test_page
             init()
             {
                 fill_pattern_color = TEST_PAGE_STIMULUS_COLOR;
-                size = 900, 200;
+                size = 900, 400;
                 offset_x = 40;
                 offset_y = 40;
             }
@@ -171,7 +171,7 @@ Page test_page
                     }
                     else
                     {
-                        print_error("Too many starred segments in segments "
+                        print_error("Too many hashtagged segments in segments "
                             "string " + string(item.id) + "\n");
                     }
                     

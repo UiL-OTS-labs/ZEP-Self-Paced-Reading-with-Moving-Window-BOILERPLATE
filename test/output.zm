@@ -10,6 +10,8 @@ Defines the formats of output table(s).
 
 HISTORY:
 2012-03-19 TV   Created.
+2019-02-10 IM Adapted to record 15 segments rather than 10.
+
 
 \******************************************************************************/
 
@@ -36,6 +38,11 @@ record TestOutput
     int         rt8;            // reading time for starred segment 8 [ms]
     int         rt9;            // reading time for starred segment 9 [ms]
     int         rt10;           // reading time for starred segment 10 [ms]
+    int         rt11;           // reading time for starred segment 11 [ms]
+    int         rt12;           // reading time for starred segment 12 [ms]
+    int         rt13;           // reading time for starred segment 13 [ms]
+    int         rt14;           // reading time for starred segment 14 [ms]
+    int         rt15;           // reading time for starred segment 15 [ms]
 }
 
 

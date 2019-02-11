@@ -1,20 +1,50 @@
-### Test items ###;;;;;
+### Test items ###
 index;id;type;segments;question;qanswer
-0;1;FILLER;"Nam/laoreet/dapibus/justo,/ac/lobortis/enim/
-rhoncus/in.";Aliquam et massa ut diam venenatis facilisis?;0
-0;2;FILLER;Curabitur/vel/nulla/laoreet/nibh/volutpat.;Donec iaculis blandit mi, et faucibus purus lobortis a?;1
-0;3;CORRECT;In/mi/ut/#ipsum/#pellentesque/#dapibus/sed/ut/lorem.;Duis quis tellus velit, vel hendrerit dolor?;0
-0;4;CORRECT;"Proin/ac/arcu/in/arcu/#porta/#vestibulum/#quis/ac/
-dolor.";Morbi id lectus in justo sagittis interdum nec eget dolor?;1
-0;5;GRERROR;"#Cras/#vestibulum/#sapien/#sit/#amet/#lectus/#malesuada/#
-fermentum/#interdum/#quam.";Feugiat dignissim urna, id tempor turpis vulputate nec?;0
-0;6;GRERROR;#Integer/#ut/#arcu/#lacus,/#luctus/#tempor/#erat.;Proin mollis elit eget justo tincidunt ultrices ornare ut ligula?;1
-1;1;FILLER;"Nam/laoreet/dapibus/justo,/ac/lobortis/enim/
-rhoncus/in.";Aliquam et massa ut diam venenatis facilisis?;0
-1;2;FILLER;Curabitur/vel/nulla/laoreet/nibh/volutpat.;Donec iaculis blandit mi, et faucibus purus lobortis a?;1
-1;3;CORRECT;In/mi/ut/#ipsum/#pellentesque/#dapibus/sed/ut/lorem.;Duis quis tellus velit, vel hendrerit dolor?;0
-1;4;CORRECT;"Proin/ac/arcu/in/arcu/#porta/#vestibulum/#quis/ac/
-dolor.";Morbi id lectus in justo sagittis interdum nec eget dolor?;1
-1;5;GRERROR;"#Cras/#vestibulum/#sapien/#sit/#amet/#lectus/#malesuada/#
-fermentum/#interdum/#quam.";Feugiat dignissim urna, id tempor turpis vulputate nec?;0
-1;6;GRERROR;#Integer/#ut/#arcu/#lacus,/#luctus/#tempor/#erat.;Proin mollis elit eget justo tincidunt ultrices ornare ut ligula?;1
+0;001;UNGR;"Jan/en/Marie/zaten/na/een/lange/
+werkdag/samen/te/wachten/in/de/
+stationsrestauratie/in/Amsterdam./
+Jan/at/een/broodje/met/ham,/#
+en/#Marie/#een/#koffie/#met/#veel/#melk./#De/#stemming/#
+was/#niet/#best,/#omdat/#de/#trein/meer/dan/
+30/minuten/vertraging/had.";Jan at een broodje.;1
+1;001;GRAMM;"Jan/en/Marie/zaten/na/een/lange/
+werkdag/samen/te/wachten/in/de/
+stationsrestauratie/in/Amsterdam./
+Jan/vroeg/een/broodje/met/ham,/#
+en/#Marie/#een/#koffie/#met/#veel/#melk./#De/#stemming/#
+was/#niet/#best,/#omdat/#de/#trein/meer/dan/
+30/minuten/vertraging/had.";Jan at een broodje.;1
+1;002;UNGR;"Roos/en/Lisa/hadden/aangeboden/het/huis/
+van/oma/eens/flink/op/te/knappen/en/schoon/te/
+maken./Roos/schuurde/het/houtwerk/in/de/gang,/#
+en/#Lisa/#het/#tapijt/#in/#de/#kamer./#Oma/#wist/#
+niet/#wat/#ze/#zag/#en/#bedankte/de/dames/met/
+een/bos/bloemen.";;
+0;002;GRAMM;"Roos/en/Lisa/hadden/aangeboden/het/huis/
+van/oma/eens/flink/op/te/knappen/en/schoon/te/
+maken./Roos/schrobde/het/houtwerk/in/de/gang,/#
+en/#Lisa/#het/#tapijt/#in/#de/#kamer./#Oma/#wist/#
+niet/#wat/#ze/#zag/#en/#bedankte/de/dames/met/
+een/bos/bloemen.";;
+0;003;FILLER;"Op/het/introductiekamp/van/hun/nieuwe/studie/
+misten/Suzy/en/Jochem/hun/partner/meer/dan/ooit./
+Suzy/zocht/een/brief/van/haar/vriend,/en/Jochem/
+een/foto/van/zijn/vriendin./Gelukkig/duurde/het/
+kamp/maar/vijf/dagen.";Suzy zocht een foto.;0
+0;004;FILLER;"Martijn/en/Jessica/verwachtten/samen/hun/
+eerste/kindje/en/vonden/het/leuk/zelf/
+babyspulletjes/te/maken./Martijn/zaagde/
+een/bedje/van/hout,/terwijl/Jessica/een/
+dekentje/van/zachte/wol/breide./
+Het/resultaat/was/een/prachtige/wieg.";;
+1;003;FILLER;"Op/het/introductiekamp/van/hun/nieuwe/studie/
+misten/Suzy/en/Jochem/hun/partner/meer/dan/ooit./
+Suzy/zocht/een/brief/van/haar/vriend,/en/Jochem/
+een/foto/van/zijn/vriendin./Gelukkig/duurde/het/
+kamp/maar/vijf/dagen.";Suzy zocht een foto.;0
+1;004;FILLER;"Martijn/en/Jessica/verwachtten/samen/hun/
+eerste/kindje/en/vonden/het/leuk/zelf/
+babyspulletjes/te/maken./Martijn/zaagde/
+een/bedje/van/hout,/terwijl/Jessica/een/
+dekentje/van/zachte/wol/breide./
+Het/resultaat/was/een/prachtige/wieg.";;

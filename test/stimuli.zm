@@ -15,6 +15,7 @@ HISTORY:
                 out parts.
 2013-02-07 TV   Made test_items table two dimensional (group selects list) 
                 and loading it from CSV file.
+2019-02-10 IM   Made prac-items load from CSV file as well.
 
 \******************************************************************************/
 
@@ -23,8 +24,9 @@ HISTORY:
 enum ItemType
 {
     FILLER,                     // filler
-    CORRECT,                    // correct sentence
-    GRERROR,                    // sentence has grammatical error
+    GRAMM,                      // correct sentence
+    UNGR,                       // sentence has grammatical error
+    PRAC,                       // practice items
 }
 
 
@@ -41,21 +43,9 @@ record TestItem
 
 // Practice item table.
 //   index: item number
-TestItem[..] prac_items =
-{
-    {
-        1, FILLER, 
-        "Cras/quis/nisl/sed/nibh/aelementum/convallis.",
-        "Praesent ut erat diam, vel sollicitudin orci?",
-        0
-    },
-    {
-        2, FILLER, 
-        "Aliquam/vitae/turpis/et/sem/commodo/dapibus/\nut/a/leo.",
-        "Fusce eu risus sed mi mollis tincidunt et non nunc?",
-        1
-    },
-};
+// Practice item table.
+//   index: item number
+TestItem[..] prac_items;
 
 
 // Test item table.
@@ -71,11 +61,11 @@ int load_stimuli()
 
     int err;
 
-//    // Load data into prac_items table.
-//    err = prac_items.load(stimuli_dir() + "prac_items.csv", 
-//        true,           // if true, file contains a header row
-//        1);             // number of lines to skip before header and data
-//    if (err) return err;
+    // Load data into prac_items table.
+    err = prac_items.load(stimuli_dir() + "prac_items.csv", 
+        true,           // if true, file contains a header row
+        1);             // number of lines to skip before header and data
+    if (err) return err;
 
 
     // Load data into test_items table.
